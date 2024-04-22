@@ -28,7 +28,7 @@ WNB Blog is a Django project. Developed as the final assignment for ETIC Algarve
 - [ ] create stylization for html pages with sass
 
 ## Backend 
-- [ ] config app to accept static files and media too
+- [✔] config app to accept static files and media too
 
 - [ ] Create views
     - [ ] blog_wnb
@@ -38,7 +38,7 @@ WNB Blog is a Django project. Developed as the final assignment for ETIC Algarve
 - [ ] Create urls 
     - [ ] blog_wnb
     - [ ] posts
-    - [ ] users
+    - [✔] users
 
 - [ ] Create models 
     - [ ] posts models
