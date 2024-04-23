@@ -9,9 +9,9 @@ from django.conf import settings
 
 # urls for app
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", views.home),
-    path("users/", include("users.urls"))
+    path('admin/', admin.site.urls), # for admin
+    path("", views.home), # route for home 
+    path("users/", include("users.urls")) # route for users app
 ]
 
 # url for app get media
