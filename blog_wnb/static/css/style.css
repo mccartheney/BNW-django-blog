@@ -235,4 +235,64 @@ header .header_user .header_user_logged .header_user_logged_info p::first-letter
   border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.form_newPost {
+  width: 100vw;
+  height: calc(100vh - 71px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form_newPost form {
+  box-shadow: rgba(100, 100, 111, 0.504) 0px 7px 29px 0px;
+  border: 1px solid black;
+  width: 400px;
+  border-radius: 10px;
+}
+.form_newPost form h1 {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  height: 40px;
+  font-size: 30px;
+}
+.form_newPost form div {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 15px;
+}
+.form_newPost form div input {
+  border: 1px solid black;
+  margin-top: 5px;
+  height: 25px;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+.form_newPost form div input:focus {
+  outline: none;
+}
+.form_newPost form div textarea {
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  resize: none;
+}
+.form_newPost form div textarea:focus {
+  outline: none;
+}
+.form_newPost form button {
+  width: calc(100% - 30px);
+  margin: 0px 15px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  height: 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
