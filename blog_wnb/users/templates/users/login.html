@@ -3,6 +3,7 @@
 {% block content %}
     <form action="{% url 'users:login' %}" method="post">
         {% csrf_token %}
+        {{message}}
         {{form}}
         <button>submit</button>
     </form>
