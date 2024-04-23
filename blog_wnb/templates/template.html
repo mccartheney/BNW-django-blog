@@ -14,7 +14,7 @@
         <div class="header_title">
             <a href="/" class="header_title_a">
                 <h1 class="header_title_a--h1">
-                    BNW
+                    BNW 
                 </h1>
             </a>
         </div>
@@ -32,9 +32,11 @@
                     </p>
                     <img src="{{ user.profile_pic.url }}" alt="user image">
                     <div class="header_user_logged_info_options">
-                        <button>
-                            new post
-                        </button>
+                        <a href="{% url 'posts:newpost' %}">
+                            <button>
+                                new post
+                            </button>
+                        </a>
                         <button>
                             account
                         </button>

@@ -59,7 +59,7 @@ def register_view(request):
                     )
 
                     # Generate slug based on username
-                    slug = slugify(form_data["username"])  # You can use any other field for the slug if needed
+                    slug = slugify(form_data["username"])
 
                     # Add the slug to the form data
                     form.instance.slug = slug

@@ -1,0 +1,12 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <div class="form_newPost">
+        <form action="{% url 'posts:newpost' %}" method="post" enctype="multipart/form-data">
+            <h1>New Post</h1>
+            {% csrf_token %}
+            {{form}}
+            <button>Register</button>
+        </form>
+    </div>
+{% endblock %}
