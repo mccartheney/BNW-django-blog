@@ -1,0 +1,33 @@
+<div class="posts">
+    {% for post_and_user in posts_and_users %}
+    <h1>
+        {{post_and_user.post.title}}
+    </h1>
+
+    <div class="posts_post">
+        <div class="posts_post_creator">
+            <img src="{{post_and_user.creator.profile_pic.url}}" alt="{{post_and_user.creator.username}}" style="width: 300px;">
+            <a href="">
+                <a href="">
+                    <p>
+                        {{post_and_user.creator.username}}
+                    </p>
+                </a>
+            </a>
+        </div>
+        <div class="posts_post_imageContent">
+            <img src="{{post_and_user.post.image.url}}" alt="{{post_and_user.post.title}}" style="width: 300px;">
+        </div>
+        <div class="posts_post_textContent">
+            <h3>
+                {{ post_and_user.post.title }}
+            </h3>
+            <p>
+                {{ post_and_user.post.description }}
+
+            </p>
+        </div>
+    </div>        
+
+    {% endfor %}
+</div>
