@@ -1,12 +1,8 @@
 <div class="posts">
     {% for post_and_user in posts_and_users %}
-    <h1>
-        {{post_and_user.post.title}}
-    </h1>
-
     <div class="posts_post">
         <div class="posts_post_creator">
-            <img src="{{post_and_user.creator.profile_pic.url}}" alt="{{post_and_user.creator.username}}" style="width: 300px;">
+            <img src="{{post_and_user.creator.profile_pic.url}}" alt="{{post_and_user.creator.username}}">
             <a href="">
                 <a href="">
                     <p>
@@ -20,7 +16,7 @@
         </div>
         <div class="posts_post_textContent">
             <h3>
-                {{ post_and_user.post.title }}
+                <strong>{{post_and_user.creator.username}}</strong> {{ post_and_user.post.title }}
             </h3>
             <p>
                 {{ post_and_user.post.description }}

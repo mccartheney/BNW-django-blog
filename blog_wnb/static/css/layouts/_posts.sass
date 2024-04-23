@@ -1,0 +1,50 @@
+.posts 
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    width: 100vw
+    margin-top: 40px
+    .posts_post
+        box-shadow: rgba(100, 100, 111, 0.504) 0px 7px 29px 0px
+        display: flex
+        margin: 10px
+        flex-direction: column
+        width: 400px
+        border:1px solid black
+
+        .posts_post_creator
+            display: flex
+            align-items: center
+            img
+                width: 45px
+                height: 45px
+                margin: 10px
+                border-radius: 50%
+                border: 1px solid black
+                box-shadow: rgba(100, 100, 111, 0.404) 0px 7px 29px 0px
+            
+            a
+                text-decoration: none
+                color: black
+                margin-right: 7px
+                font-size: 18px
+                font-weight: 900
+        
+        .posts_post_imageContent
+            width: calc( 100% - 20px )
+            margin: 10px
+            img
+                width: 100% !important
+
+        .posts_post_textContent
+            width: 100%
+            margin: 10px
+            h3
+                strong
+                    font-weight: 600
+            p
+                margin: 10px 0px
+                font-size: 12px
+
+

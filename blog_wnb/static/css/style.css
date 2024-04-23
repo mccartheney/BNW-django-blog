@@ -126,6 +126,60 @@ header .header_user .header_user_logged .header_user_logged_info p::first-letter
   text-transform: uppercase;
 }
 
+.posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 40px;
+}
+.posts .posts_post {
+  box-shadow: rgba(100, 100, 111, 0.504) 0px 7px 29px 0px;
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+  width: 400px;
+  border: 1px solid black;
+}
+.posts .posts_post .posts_post_creator {
+  display: flex;
+  align-items: center;
+}
+.posts .posts_post .posts_post_creator img {
+  width: 45px;
+  height: 45px;
+  margin: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow: rgba(100, 100, 111, 0.404) 0px 7px 29px 0px;
+}
+.posts .posts_post .posts_post_creator a {
+  text-decoration: none;
+  color: black;
+  margin-right: 7px;
+  font-size: 18px;
+  font-weight: 900;
+}
+.posts .posts_post .posts_post_imageContent {
+  width: calc(100% - 20px);
+  margin: 10px;
+}
+.posts .posts_post .posts_post_imageContent img {
+  width: 100% !important;
+}
+.posts .posts_post .posts_post_textContent {
+  width: 100%;
+  margin: 10px;
+}
+.posts .posts_post .posts_post_textContent h3 strong {
+  font-weight: 600;
+}
+.posts .posts_post .posts_post_textContent p {
+  margin: 10px 0px;
+  font-size: 12px;
+}
+
 .form_login {
   width: 100vw;
   height: calc(100vh - 71px);
