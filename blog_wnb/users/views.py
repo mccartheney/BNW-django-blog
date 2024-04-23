@@ -137,7 +137,7 @@ def login_view(request):
     else : # if user is logged
         # redirect to home
         return redirect("/")
-        
+
 # a view with funtion of loggout a user
 def logout_view(request):
     # loggout user
