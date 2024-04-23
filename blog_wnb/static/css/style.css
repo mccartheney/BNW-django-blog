@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+*, *:before, *:after {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+header {
+  height: 70px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+header .header_title {
+  font-size: 25px;
+  margin-left: 30px;
+}
+header .header_title a {
+  text-decoration: none;
+  color: black;
+}
+header .header_user {
+  margin-right: 30px;
+}
+header .header_user a {
+  margin-left: 30px;
+}
+header .header_user a button {
+  height: 30px;
+  background: none;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.form_login {
+  width: 100vw;
+  height: calc(100vh - 71px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form_login form {
+  box-shadow: rgba(100, 100, 111, 0.504) 0px 7px 29px 0px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 250px;
+}
+.form_login form h1 {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  height: 40px;
+  font-size: 30px;
+}
+.form_login form div {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 15px;
+}
+.form_login form div input {
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-top: 5px;
+  height: 25px;
+  padding-left: 10px;
+}
+.form_login form div input:focus {
+  outline: none;
+}
+.form_login form button {
+  width: calc(100% - 30px);
+  margin-left: 15px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form_register {
+  width: 100vw;
+  height: calc(100vh - 71px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form_register form {
+  box-shadow: rgba(100, 100, 111, 0.504) 0px 7px 29px 0px;
+  border: 1px solid black;
+  width: 400px;
+  border-radius: 10px;
+}
+.form_register form h1 {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  height: 40px;
+  font-size: 30px;
+}
+.form_register form div {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 15px;
+}
+.form_register form div input {
+  border: 1px solid black;
+  margin-top: 5px;
+  height: 25px;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+.form_register form div input:focus {
+  outline: none;
+}
+.form_register form div textarea {
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  resize: none;
+}
+.form_register form div textarea:focus {
+  outline: none;
+}
+.form_register form button {
+  width: calc(100% - 30px);
+  margin: 0px 15px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  height: 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

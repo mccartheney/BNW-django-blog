@@ -1,0 +1,62 @@
+.form_register 
+    width: 100vw
+    height: calc(100vh - 71px)
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+    form
+        box-shadow: rgba(100, 100, 111, 0.504) 0px 7px 29px 0px
+
+        border: 1px solid black
+        width: 400px
+        border-radius: 10px
+
+        h1
+            width: 100%
+            margin-top: 20px
+            text-align: center
+            height: 40px
+            font-size: 30px
+
+        div 
+            display: flex
+            flex-direction: column
+            margin: 10px 15px
+            input
+                border: 1px solid black
+                margin-top: 5px 
+                height: 25px
+                padding-left: 10px
+                border-radius: 5px
+
+
+                &:focus
+                    outline: none
+
+            textarea
+                margin-top: 5px
+                border-radius: 5px
+                border: 1px solid black
+                resize: none
+                &:focus
+                    outline: none
+                
+        button
+            width: calc( 100% - 30px )
+            margin: 0px 15px
+            margin-bottom: 20px
+            margin-top: 10px
+            height: 30px
+            font-size: 20px
+
+            display: flex
+            justify-content: center
+            align-items: center
+
+            background: none
+            border: 1px solid black
+            border-radius: 5px
+
+            cursor: pointer

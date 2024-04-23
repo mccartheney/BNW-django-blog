@@ -42,13 +42,13 @@ WNB Blog is a Django project. Developed as the final assignment for ETIC Algarve
 
 - [ ] Create models 
     - [ ] posts models
-    - [ ] custom user model
+    - [✔] custom user model
 
 - [ ] Create custom forms 
-    - [ ] create custorm form for posts
-    - [ ] create custorm form for users
+    - [ ] create custom form for posts
+    - [✔] create custom forms for users
 
-- [ ] create authentication for users
+- [✔] create authentication for users
 
 - [ ] add, update and remove posts
 
