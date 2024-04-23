@@ -65,19 +65,62 @@ header .header_title a {
   text-decoration: none;
   color: black;
 }
-header .header_user {
+header .header_user .header_user_notLogged {
   margin-right: 30px;
 }
-header .header_user a {
+header .header_user .header_user_notLogged a {
   margin-left: 30px;
 }
-header .header_user a button {
+header .header_user .header_user_notLogged a button {
   height: 30px;
   background: none;
   font-size: 20px;
   border: none;
   border-bottom: 1px solid black;
   cursor: pointer;
+}
+header .header_user .header_user_logged {
+  margin-right: 30px;
+}
+header .header_user .header_user_logged:hover .header_user_logged_info_options {
+  display: flex;
+  flex-direction: column;
+  top: 70px;
+  right: 0px;
+}
+header .header_user .header_user_logged:hover .header_user_logged_info_options button {
+  width: 150px;
+  height: 40px;
+  font-size: 17px;
+  border: 1px solid black;
+  border-top: none;
+  background: none;
+  border-radius: none;
+  cursor: pointer;
+}
+header .header_user .header_user_logged .header_user_logged_info_options {
+  display: none;
+  position: absolute;
+}
+header .header_user .header_user_logged .header_user_logged_info {
+  height: 70px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header_user .header_user_logged .header_user_logged_info img {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-left: 30px;
+}
+header .header_user .header_user_logged .header_user_logged_info p {
+  font-size: 19px;
+}
+header .header_user .header_user_logged .header_user_logged_info p::first-letter {
+  text-transform: uppercase;
 }
 
 .form_login {

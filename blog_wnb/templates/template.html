@@ -25,33 +25,42 @@
 
         <div class="header_user">
         {% if is_logged %}
-            <p>
-                {{ user.username }}
-            </p>
-            <img src="{{ user.profile_pic.url }}" alt="user image">
-            <button>
-                new post
-            </button>
-            <button>
-                account
-            </button>
-            <a href="{% url 'users:logout' %}">
-                <button>
-                    logout
-                </button>
-            </a>
+            <div class="header_user_logged">
+                <div class="header_user_logged_info">
+                    <p>
+                        {{ user.username }}
+                    </p>
+                    <img src="{{ user.profile_pic.url }}" alt="user image">
+                    <div class="header_user_logged_info_options">
+                        <button>
+                            new post
+                        </button>
+                        <button>
+                            account
+                        </button>
+                        <a href="{% url 'users:logout' %}">
+                            <button>
+                                logout
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
         {% else %}
-            <a href="{% url 'users:register' %}">
-                <button>
-                    register
-                </button>
-            </a>
+            <div class="header_user_notLogged">
 
-            <a href="{% url 'users:login' %}">
-                <button>
-                    login
-                </button>
-            </a>
+                <a href="{% url 'users:register' %}">
+                    <button>
+                        register
+                    </button>
+                </a>
+
+                <a href="{% url 'users:login' %}">
+                    <button>
+                        login
+                    </button>
+                </a>
+            </div>
         {% endif %}
         </div>
     </header>
