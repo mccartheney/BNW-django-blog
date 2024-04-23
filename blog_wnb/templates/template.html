@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +11,47 @@
 
     <header>
         <div class="header_title">
-            <a href="/"></a>
+            <a href="/" class="header_title_a">
+                <h1 class="header_title_a--h1">
+                    BNW
+                </h1>
+            </a>
+        </div>
+
+        <div class="header_actions">
+
+        </div>
+
+        <div class="header_user">
+        {% if is_logged %}
+            <p>
+                {{ username }}
+            </p>
+            <img src="{% static '/images/user.png' %}" alt="user image">
+            <button>
+                new post
+            </button>
+            <button>
+                account
+            </button>
+            <a href="{% url 'users:logout' %}">
+                <button>
+                    logout
+                </button>
+            </a>
+        {% else %}
+            <a href="{% url 'users:register' %}">
+                <button>
+                    register
+                </button>
+            </a>
+
+            <a href="{% url 'users:login' %}">
+                <button>
+                    login
+                </button>
+            </a>
+        {% endif %}
         </div>
     </header>
 
