@@ -26,9 +26,9 @@
         <div class="header_user">
         {% if is_logged %}
             <p>
-                {{ username }}
+                {{ user.username }}
             </p>
-            <img src="{% static '/images/user.png' %}" alt="user image">
+            <img src="{{ user.profile_pic.url }}" alt="user image">
             <button>
                 new post
             </button>

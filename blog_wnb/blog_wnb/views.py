@@ -17,13 +17,10 @@ def home (request) :
         # getting user from user_profile models by email
         user = user_profile.objects.filter( email = user_email )[0]
 
-        # setting user_name as username from user_profile
-        user_name = user.username
-
-        # return index.html with some "arguments" : is logged and username
+        # return index.html with some "arguments" : is logged and user
         return render (request, "index.html", {
             "is_logged" : is_logged, 
-            "username" : user_name
+            "user" : user
         })
         
     else : # if its not logged
