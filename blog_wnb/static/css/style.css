@@ -114,10 +114,13 @@ header .header_user .header_user_logged .header_user_logged_info img {
   width: 50px;
   border: 1px solid black;
   border-radius: 50%;
-  margin-left: 30px;
+  margin-left: 15px;
 }
 header .header_user .header_user_logged .header_user_logged_info p {
   font-size: 19px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 header .header_user .header_user_logged .header_user_logged_info p::first-letter {
   text-transform: uppercase;

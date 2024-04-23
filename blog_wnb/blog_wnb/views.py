@@ -16,7 +16,7 @@ def home (request) :
 
         # getting user from user_profile models by email
         user = user_profile.objects.filter( email = user_email )[0]
-
+    
         # return index.html with some "arguments" : is logged and user
         return render (request, "index.html", {
             "is_logged" : is_logged, 
