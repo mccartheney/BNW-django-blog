@@ -15,9 +15,21 @@ import uuid
 # import user_profile from user models to get info about logged user
 from users.models import user_profile
 
+from django.contrib.auth import logout
+
+# function to logout superuser
+def loggout_superuser (is_super_user) :
+    # if user is super user 
+    if is_super_user:
+        # logout and send to home page
+        logout(request)
+        return redirect("/")
 
 @login_required(login_url="users:login") # if user is not logged send him to users:login
 def create_post (request) :
+    # logout super user
+    loggout_superuser(request.user.is_superuser)
+
     # Get username (email) from user
     user_email = request.user.username
 

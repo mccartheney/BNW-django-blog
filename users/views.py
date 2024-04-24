@@ -27,12 +27,27 @@ from django.utils.text import slugify
 # import uuid to create a unique id
 import uuid
 
+# function to logout superuser
+def loggout_superuser (is_super_user) :
+    # if user is super user 
+    if is_super_user:
+        # logout and send to home page
+        logout(request)
+        return redirect("/")
+
 # a view with a funtion to redirect to login view
 def user_home(request):
+    # logout super user
+    loggout_superuser(request.user.is_superuser)
+
+    # redirect to login page 
     return redirect('users:login')
 
 # a view with funtion to register a person
 def register_view(request):
+    # logout super user
+    loggout_superuser(request.user.is_superuser)
+
     # get info from user if its logged or not
     is_logged = request.user.is_authenticated
 
@@ -96,6 +111,9 @@ def register_view(request):
 
 # a view with funtion to login a user 
 def login_view(request):
+    loggout_superuser(request.user.is_superuser)
+
+
     # get info if user is logged
     is_logged = request.user.is_authenticated
 
@@ -162,21 +180,40 @@ def logout_view(request):
     return redirect("/")
 
 @login_required(login_url="users:login") # if user is not logged send him to users:login
+# view to check profile info and delete account or a post
 def my_profile_view (request) : 
-    if request.method == "POST" :
-        if "delete_post" in request.POST :
+    # logout super user
+    loggout_superuser(request.user.is_superuser)
+
+    if request.method == "POST" : # if mehod is post
+        if "delete_post" in request.POST : # check if info send from user is delete post
+            # get   data sent by user
             search_id = request.POST["delete_post"]
+
+            # search post by data
             post_to_delete = posts.objects.filter(content_id=search_id)[0]
+
+            # delte post
             post_to_delete.delete()
 
-        elif "delete_account" in request.POST :
+        elif "delete_account" in request.POST : # check if info sent from user is deleted post
+            # get user profile with user data
             user_profile_account_to_delete = user_profile.objects.filter(email=request.user.username)[0]
+            # get user with user data
             user_account_to_delete = User.objects.filter(username=user_profile_account_to_delete.email)[0]
-            logout(request)        
+
+            # loggout user to delete account
+            logout(request)
+
+            # delete account 
             user_account_to_delete.delete()
             user_profile_account_to_delete.delete()
+
+            # redirect to home
             return redirect("/")
 
+
+    # if user is logged = True, if not = False
     is_logged = request.user.is_authenticated
 
     search_user = user_profile.objects.filter(email=request.user.username)
@@ -198,6 +235,8 @@ def my_profile_view (request) :
     })
 
 def profile_view (request, slug) :
+    loggout_superuser(request.user.is_superuser)
+
     is_logged = request.user.is_authenticated
 
     search_user = user_profile.objects.filter(slug=slug)

@@ -4,10 +4,24 @@ from django.shortcuts import render
 # import user_profile from user models to get info about logged user
 from users.models import user_profile
 
+# import posts to get posts to show in home page
 from posts.models import posts
+
+from django.contrib.auth import logout
+
+# function to logout superuser
+def loggout_superuser (is_super_user) :
+    # if user is super user 
+    if is_super_user:
+        # logout and send to home page
+        logout(request)
+        return redirect("/")
 
 # define home view
 def home (request) :
+    # logout super user
+    loggout_superuser(request.user.is_superuser)
+
 
     all_posts = posts.objects.all()[0:10]
     posts_and_users = []
