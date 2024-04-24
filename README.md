@@ -16,41 +16,41 @@ WNB Blog is a Django project. Developed as the final assignment for ETIC Algarve
 # todo
 
 ## Frontend
-- [ ] create html pages
-    - [ ] condition rendering in html pages
-    - [ ] page for user
-    - [ ] page for post
-    - [ ] page for register user
-    - [ ] page for login user
-    - [ ] page for main landing
-        - [ ] show posts in html pages
+- [✔] create html pages
+    - [✔] condition rendering in html pages
+    - [✔] page for user
+    - [✔] page for register user
+    - [✔] page for login user
+    - [✔] page for main landing
+        - [✔] show posts in html pages
 
-- [ ] create stylization for html pages with sass
+- [✔] create stylization for html pages with sass
 
 ## Backend 
 - [✔] config app to accept static files and media too
 
-- [ ] Create views
-    - [ ] blog_wnb
-    - [ ] posts
-    - [ ] users
-
-- [ ] Create urls 
-    - [ ] blog_wnb
-    - [ ] posts
+- [✔] Create views
+    - [✔] blog_wnb
+    - [✔] posts
     - [✔] users
 
-- [ ] Create models 
-    - [ ] posts models
+- [✔] Create urls 
+    - [✔] blog_wnb
+    - [✔] posts
+    - [✔] users
+
+- [✔] Create models 
+    - [✔] posts models
     - [✔] custom user model
 
-- [ ] Create custom forms 
-    - [ ] create custom form for posts
+- [✔] Create custom forms 
+    - [✔] create custom form for posts
     - [✔] create custom forms for users
 
 - [✔] create authentication for users
 
-- [ ] add, update and remove posts
+- [✔] add and remove posts
+- [✔] remove users
 
 # Technologies
 
