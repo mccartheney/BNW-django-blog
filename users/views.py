@@ -1,8 +1,8 @@
 # import render to render a page and redirect to redirect to some page
 from django.shortcuts import render, redirect
 
+# import login required to create pages with login required
 from django.contrib.auth.decorators import login_required
-
 
 # import login as auth_login to login a user and as auth_login because login() was given error, 
 # logout to logout, 
@@ -216,43 +216,61 @@ def my_profile_view (request) :
     # if user is logged = True, if not = False
     is_logged = request.user.is_authenticated
 
+    # get user
     search_user = user_profile.objects.filter(email=request.user.username)
-
     user = search_user[0]
+
+    # get user posts
     user_content_posts = posts.objects.filter(made_by=user.email)
+
+    # create array to with post and user
     posts_and_users = []
 
+    # loop through user posts
     for post in user_content_posts :
+        # append post and user to array
         posts_and_users.append({
             "post" : post,
             "creator" : user
         })
 
+    # return my profile page with data
     return render (request, "users/my_profile.html", {
         "is_logged" : is_logged,
         "posts_and_users" : posts_and_users[::-1],
         "user" : user
     })
 
+# a view to show a user page
 def profile_view (request, slug) :
+    # loggout user
     loggout_superuser(request.user.is_superuser)
 
+    # verify is user is logged
     is_logged = request.user.is_authenticated
 
+    # get user by slug info
     search_user = user_profile.objects.filter(slug=slug)
 
+    # if exit user
     if len(search_user) > 0 :
+        # get user
         user = search_user[0]
+
+        # get user content
         user_content_posts = posts.objects.filter(made_by=user.email)
+
+        # create a array for post and user
         posts_and_users = []
 
+        # append to array user and post
         for post in user_content_posts :
             posts_and_users.append({
                 "post" : post,
                 "creator" : user
             })
 
-    
+    # render user profile with data
     return render (request, "users/user_profile.html", {
         "is_logged" : is_logged,
         "posts_and_users" : posts_and_users[::-1],

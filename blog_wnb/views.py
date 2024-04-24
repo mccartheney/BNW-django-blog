@@ -22,11 +22,17 @@ def home (request) :
     # logout super user
     loggout_superuser(request.user.is_superuser)
 
-
+    # get first ten posts
     all_posts = posts.objects.all()[0:10]
+    # create array to get posts and users
     posts_and_users = []
+
+    # loop through posts
     for post in all_posts :
+        # get post creator
         creator = user_profile.objects.filter(email=post.made_by)[0]
+
+        # append post and creator to array
         posts_and_users.append({
             "post" : post,
             "creator" : creator
