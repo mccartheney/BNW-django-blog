@@ -1,6 +1,9 @@
 # import render to render a page and redirect to redirect to some page
 from django.shortcuts import render, redirect
 
+from django.contrib.auth.decorators import login_required
+
+
 # import login as auth_login to login a user and as auth_login because login() was given error, 
 # logout to logout, 
 # authenticate to return a user when gives a username and password 
@@ -157,6 +160,42 @@ def logout_view(request):
 
     # redirect to home
     return redirect("/")
+
+@login_required(login_url="users:login") # if user is not logged send him to users:login
+def my_profile_view (request) : 
+    if request.method == "POST" :
+        if "delete_post" in request.POST :
+            search_id = request.POST["delete_post"]
+            post_to_delete = posts.objects.filter(content_id=search_id)[0]
+            post_to_delete.delete()
+
+        elif "delete_account" in request.POST :
+            user_profile_account_to_delete = user_profile.objects.filter(email=request.user.username)[0]
+            user_account_to_delete = User.objects.filter(username=user_profile_account_to_delete.email)[0]
+            logout(request)        
+            user_account_to_delete.delete()
+            user_profile_account_to_delete.delete()
+            return redirect("/")
+
+    is_logged = request.user.is_authenticated
+
+    search_user = user_profile.objects.filter(email=request.user.username)
+
+    user = search_user[0]
+    user_content_posts = posts.objects.filter(made_by=user.email)
+    posts_and_users = []
+
+    for post in user_content_posts :
+        posts_and_users.append({
+            "post" : post,
+            "creator" : user
+        })
+
+    return render (request, "users/my_profile.html", {
+        "is_logged" : is_logged,
+        "posts_and_users" : posts_and_users[::-1],
+        "user" : user
+    })
 
 def profile_view (request, slug) :
     is_logged = request.user.is_authenticated

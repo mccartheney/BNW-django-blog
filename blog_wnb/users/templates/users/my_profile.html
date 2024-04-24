@@ -1,0 +1,66 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <div class="user_info">
+        <div class="user_info_image">
+            <img src="{{ user.profile_pic.url }}" alt="{{ user.username }}">
+        </div>
+        <div class="user_info_textContent">
+            <div class="user_info_textContent_credencials">
+                <h2 class="user_info_textContent_name">
+                    {{ user.username }}
+                </h2>
+                <p class="user_info_textContent_email">
+                    {{ user.email }}
+                </p>
+            </div>
+            <p class="user_info_textContent_bio">
+                {{ user.bio }}
+            </p>
+        </div>
+        <form action="{% url 'users:my_profile' %}" method="post" style="margin-right: 120px;">
+            {% csrf_token %}
+            <input type="hidden" value="delete_account" name="delete_account" id="account">
+            <button type="submit" style="background-color: red; cursor: pointer; color: white; border: none; height: 50px;width: 230px; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; font-size: large;">
+                Delete account
+            </button>
+        </form>
+    </div>
+
+
+    <div class="posts">
+        {% for post_and_user in posts_and_users %}
+        <div class="posts_post">
+            <div class="posts_post_creator" style="position: relative;">
+                <img src="{{post_and_user.creator.profile_pic.url}}" alt="{{post_and_user.creator.username}}">
+                <a href="{% url 'users:profile' slug=post_and_user.creator.slug %}">
+                    <p>
+                        {{post_and_user.creator.username}}
+                    </p>
+                </a>
+                <form action="{% url 'users:my_profile' %}" method="post" style="position: absolute; right: 10px;">
+                    {% csrf_token %}
+                    <input type="hidden" name="delete_post" id="delete_post" value="{{ post_and_user.post.content_id }}">
+                    <button type="submit" style="background-color: red; cursor: pointer; color: white; border: none; height: 30px;
+                    width: 100px; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                        Delete Post
+                    </button>
+                </form>
+            </div>
+            <div class="posts_post_imageContent">
+                <img src="{{post_and_user.post.image.url}}" alt="{{post_and_user.post.title}}" style="width: 300px;">
+            </div>
+            <div class="posts_post_textContent">
+                <h3>
+                    <strong>{{post_and_user.creator.username}}</strong> {{ post_and_user.post.title }}
+                </h3>
+                <p>
+                    {{ post_and_user.post.description }}
+    
+                </p>
+            </div>
+        </div>
+    
+        {% endfor %}
+    </div>
+{% endblock %}

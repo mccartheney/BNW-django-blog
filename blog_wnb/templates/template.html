@@ -37,9 +37,11 @@
                                 new post
                             </button>
                         </a>
-                        <button>
-                            account
-                        </button>
+                        <a href="{% url 'users:my_profile' %}">
+                            <button>
+                                account
+                            </button>
+                        </a>
                         <a href="{% url 'users:logout' %}">
                             <button>
                                 logout
