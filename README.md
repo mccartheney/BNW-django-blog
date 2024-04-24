@@ -98,7 +98,7 @@ cd WNB-django-blog
 
 ## Run locally
 
-### 3. Set up and run the application
+### 3. Set up the application
 
 ```bash
 make run-install
