@@ -10,6 +10,9 @@ run :
 	python manage.py runserver
 
 install-run-docker :
+	poetry shell
+	python manage.py migrate
+	python manage.py makemigrations
 	docker-compose build
 	docker-compose up
 
