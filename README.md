@@ -5,9 +5,9 @@ WNB Blog is a Django project. Developed as the final assignment for ETIC Algarve
 
 1. [Todo](#todo)
 2. [Technologies](#technologies)
-3. [Installation](#installation)
-4. [Usage](#usage)
-5. [Folder Structure](#folder-structure)
+3. [Requirements](#requirement)
+4. [Installation](#installation)
+5. [Usage](#usage)
 6. [Useful Links](#useful-links)
 7. [Justification for Framework Choice](#justification-for-framework-choice)
 8. [Developers](#developers)
@@ -67,17 +67,76 @@ WNB Blog is a Django project. Developed as the final assignment for ETIC Algarve
 - Makefile
 - Poetry
 
+# Requirements
+
+To work with WNB Django Blog, ensure you have the following installed:
+
+- **Python**: The project is built using Python. You can download and install Python from the [official Python website](https://www.python.org/downloads/).
+
+- **Poetry**: Poetry is used for dependency management. You can install Poetry by following the instructions on the [Poetry website](https://python-poetry.org/docs/#installation).
+
+- *(Optional)* **Docker**: Docker is optional but recommended for containerized deployment of the application. You can download and install Docker Desktop from the [official Docker website](https://www.docker.com/get-started).
+
+
 # Installation
+
+## Installation
+
+To get started with WNB Django Blog, follow these steps:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/mccartheney/WNB-django-blog.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd WNB-django-blog
+```
+
+## Run locally
+
+### 3. Set up and run the application
+
+```bash
+make run-install
+```
+
+### 4. Run the application 
+
+```bash
+make run
+```
+
+## Run with Docker
+
+### 3. Set up and run the application
+
+```bash
+make install-run-docker
+```
+
+### 4. Run the application 
+
+```bash
+make run-docker
+```
+
+<br/>
+ This will start the development server, and you can access the application at http://localhost:8000.
+<br/>
+<br/>
+
 
 # Usage
 
 # Folder Structure
 
-# Useful Links
-
 # Justification for Framework Choice
 
-The choice of [Django](link-to-django-website) as the framework for this project was based on several technical considerations:
+The choice of [Django](https://www.djangoproject.com/) as the framework for this project was based on several technical considerations:
 
 - **Rapid Development:** Django offers a comprehensive set of tools and functionalities that enable rapid and efficient development of web applications.
   
