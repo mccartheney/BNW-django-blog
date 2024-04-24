@@ -7,7 +7,7 @@ WNB Blog is a Django project. Developed as the final assignment for ETIC Algarve
 2. [Technologies](#technologies)
 3. [Requirements](#requirement)
 4. [Installation](#installation)
-5. [Usage](#usage)
+5. [Screenshots](#screenshots)
 6. [Useful Links](#useful-links)
 7. [Justification for Framework Choice](#justification-for-framework-choice)
 8. [Developers](#developers)
@@ -130,9 +130,35 @@ make run-docker
 <br/>
 
 
-# Usage
+# Screenshots
 
-# Folder Structure
+### Not logged user page
+![Alt text](./screenshots/empty_home_page.png)
+
+### Register page
+![Alt text](./screenshots/register_page.png)
+
+### Login page
+![Alt text](./screenshots/login_page.png)
+
+### Logged home page
+![Alt text](./screenshots/logged_home_page.png)
+
+### Options in logged home page 
+![Alt text](./screenshots/options_home_page.png)
+
+### Create post page
+![Alt text](./screenshots/post_page.png)
+
+### Home page with posts
+If you click on username on post, you will be redirected to post user profile (Public profile page)
+![Alt text](./screenshots/home_page.png)
+
+### Public profile page
+![Alt text](./screenshots/profile_page.png)
+
+### Private profile page
+![Alt text](./screenshots/user_page.png)
 
 # Justification for Framework Choice
 
