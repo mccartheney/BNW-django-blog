@@ -1,2 +1,23 @@
 {% extends 'template.html' %}
 
+{% block content %}
+    <div class="user_info">
+        <div class="user_info_image">
+            <img src="{{ user.profile_pic.url }}" alt="{{ user.username }}">
+        </div>
+        <div class="user_info_textContent">
+            <div class="user_info_textContent_credencials">
+                <h2 class="user_info_textContent_name">
+                    {{ user.username }}
+                </h2>
+                <p class="user_info_textContent_email">
+                    {{ user.email }}
+                </p>
+            </div>
+            <p class="user_info_textContent_bio">
+                {{ user.bio }}
+            </p>
+        </div>
+    </div>
+    {% include 'posts.html' %}
+{% endblock %}

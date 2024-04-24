@@ -18,7 +18,6 @@ def home (request) :
             "creator" : creator
         })
 
-    print(posts_and_users[0]['post'])
 
     # if user is logged = True, if not = False
     is_logged = request.user.is_authenticated
@@ -30,12 +29,12 @@ def home (request) :
 
         # getting user from user_profile models by email
         user = user_profile.objects.filter( email = user_email )[0]
-    
+
         # return index.html with some "arguments" : is logged, posts and user
         return render (request, "index.html", {
             "is_logged" : is_logged, 
             "user" : user,
-            "posts_and_users" : posts_and_users
+            "posts_and_users" : posts_and_users[::-1]
         })
         
     else : # if its not logged
@@ -44,5 +43,5 @@ def home (request) :
     # return index.html with some "arguments" : is logged, posts
     return render (request, "index.html", {
         "is_logged" : is_logged,
-        "posts_and_users" : posts_and_users
+        "posts_and_users" : posts_and_users[::-1],
     })

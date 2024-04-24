@@ -15,8 +15,14 @@ from .forms import register_form, login_form
 # import user_profile model
 from .models import user_profile
 
+# import posts model
+from posts.models import posts
+
 # import slugfy to slugfy username 
 from django.utils.text import slugify
+
+# import uuid to create a unique id
+import uuid
 
 # a view with a funtion to redirect to login view
 def user_home(request):
@@ -52,16 +58,22 @@ def register_view(request):
                     form_data = form.cleaned_data
 
                     # create a user with data from form
-                    new_user = User.objects.create_user (
+                    User.objects.create_user (
                         email = form_data ["email"],
                         username = form_data ["email"],
                         password=form_data["password"],
                     )
 
-                    # Generate slug based on username
-                    slug = slugify(form_data["username"])
+                    # create a unique id with uuid
+                    new_id = uuid.uuid4()
 
-                    # Add the slug to the form data
+                    #  set id user as new_id
+                    form.instance.user_id = new_id
+
+                    # Generate slug based on username
+                    slug = slugify(new_id)
+
+                    # # # Add the slug to the form data
                     form.instance.slug = slug
 
                     # save user user profile to database
@@ -145,3 +157,26 @@ def logout_view(request):
 
     # redirect to home
     return redirect("/")
+
+def profile_view (request, slug) :
+    is_logged = request.user.is_authenticated
+
+    search_user = user_profile.objects.filter(slug=slug)
+
+    if len(search_user) > 0 :
+        user = search_user[0]
+        user_content_posts = posts.objects.filter(made_by=user.email)
+        posts_and_users = []
+
+        for post in user_content_posts :
+            posts_and_users.append({
+                "post" : post,
+                "creator" : user
+            })
+
+    
+    return render (request, "users/user_profile.html", {
+        "is_logged" : is_logged,
+        "posts_and_users" : posts_and_users[::-1],
+        "user" : user
+    })

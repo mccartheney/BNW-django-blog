@@ -3,12 +3,10 @@
     <div class="posts_post">
         <div class="posts_post_creator">
             <img src="{{post_and_user.creator.profile_pic.url}}" alt="{{post_and_user.creator.username}}">
-            <a href="">
-                <a href="">
-                    <p>
-                        {{post_and_user.creator.username}}
-                    </p>
-                </a>
+            <a href="{% url 'users:profile' slug=post_and_user.creator.slug %}">
+                <p>
+                    {{post_and_user.creator.username}}
+                </p>
             </a>
         </div>
         <div class="posts_post_imageContent">

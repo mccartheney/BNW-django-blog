@@ -8,6 +8,7 @@ class user_profile (models.Model) :
     password = models.CharField(max_length=100)
     bio = models.TextField(default="")
     profile_pic = models.ImageField(upload_to="profile_pics/", default="user.png")
+    user_id = models.TextField(default="")
     slug = models.SlugField(default="")
 
     # set the "name" of the model

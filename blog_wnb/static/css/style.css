@@ -349,4 +349,35 @@ header .header_user .header_user_logged .header_user_logged_info p::first-letter
   border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.user_info {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.user_info .user_info_image {
+  margin-left: 50px;
+}
+.user_info .user_info_image img {
+  margin: 50px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: rgba(100, 100, 111, 0.681) 0px 7px 29px 0px;
+}
+.user_info .user_info_textContent {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.user_info .user_info_textContent .user_info_textContent_name {
+  font-weight: 900;
+  font-size: 40px;
+}
+.user_info .user_info_textContent .user_info_textContent_email {
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */
